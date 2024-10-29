@@ -1,3 +1,0 @@
-
-
-String name = "Paskal Gay";
