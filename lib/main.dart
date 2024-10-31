@@ -1,8 +1,6 @@
-<<<<<<< HEAD
+import 'package:e_cycle/constants/colors.dart';
 import 'package:e_cycle/page/profile.dart';
-=======
-
->>>>>>> e58a45ae845f27b876a900e3682383df85d5a5b4
+import 'package:e_cycle/screens/profile/profile.dart';
 import 'package:e_cycle/screens/splash.dart';
 import 'package:flutter/material.dart';
 

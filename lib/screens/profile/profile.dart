@@ -1,3 +1,4 @@
+import 'package:e_cycle/constants/colors.dart';
 import 'package:e_cycle/screens/profile/widgets/header.dart';
 import 'package:e_cycle/screens/profile/widgets/list_menu.dart';
 import 'package:e_cycle/screens/profile/widgets/list_menua.dart';
@@ -13,10 +14,13 @@ class ProfilePage extends StatelessWidget {
         body: SafeArea(
       child: Column(
         children: [
-          const SizedBox(
-            height: 56,
+          Container(
+            height: 72,
+            child: Header,
+            decoration: const BoxDecoration(
+              color: primaryColor,
+            ),
           ),
-          Header,
           const SizedBox(
             height: 10,
           ),
@@ -177,7 +181,7 @@ class ProfilePage extends StatelessWidget {
                 )
               ]),
             ),
-          )
+          ),
         ],
       ),
     ));
