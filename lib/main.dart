@@ -1,3 +1,4 @@
+import 'package:e_cycle/page/profile.dart';
 import 'package:e_cycle/screens/splash.dart';
 import 'package:flutter/material.dart';
 

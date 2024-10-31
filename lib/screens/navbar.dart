@@ -1,4 +1,5 @@
 import 'package:e_cycle/screens/explore.dart';
+import 'package:e_cycle/screens/profile/profile.dart';
 import 'package:e_cycle/screens/scan.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
@@ -22,7 +23,7 @@ class _NavbarState extends State<Navbar> {
       const Explore(),
       Scan(),
       const Home(),
-      const Home(),
+      const ProfilePage(),
     ];
   }
 
@@ -56,7 +57,11 @@ class _NavbarState extends State<Navbar> {
         inactiveColorPrimary: Colors.grey,
       ),
       PersistentBottomNavBarItem(
-        icon: const Icon(Icons.camera_alt_outlined, size: 32, color: Colors.white,), // Ukuran ikon lebih besar
+        icon: const Icon(
+          Icons.camera_alt_outlined,
+          size: 32,
+          color: Colors.white,
+        ), // Ukuran ikon lebih besar
         title: "E-Scan",
         activeColorPrimary: primaryColor,
         inactiveColorPrimary: Colors.grey,
