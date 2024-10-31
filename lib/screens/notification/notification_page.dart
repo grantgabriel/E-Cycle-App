@@ -6,7 +6,7 @@ class NotificationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.green,
+      backgroundColor: const Color.fromARGB(255, 76, 175, 80),
       appBar: AppBar(
         backgroundColor: Colors.green,
         // elevation: 0,
@@ -19,14 +19,14 @@ class NotificationPage extends StatelessWidget {
           ),
         ],
 
-        leading: Container(
-          height: 40,
-          width: 40,
-          child: Icon(
-            Icons.arrow_back,
-            color: const Color.fromARGB(255, 255, 255, 255),
-          ),
-        ),
+        // leading: Container(
+        //   height: 40,
+        //   width: 40,
+        //   child: Icon(
+        //     Icons.arrow_back,
+        //     color: const Color.fromARGB(255, 255, 255, 255),
+        //   ),
+        // ),
 
         title: Text(
           "Notifikasi",
