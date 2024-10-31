@@ -1,5 +1,3 @@
-import 'package:e_cycle/screens/article/article_detail.dart';
-import 'package:e_cycle/screens/home.dart';
 import 'package:e_cycle/screens/splash.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +17,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const ArticleDetailPage()
+      home: const Splash()
     );
   }
 }
