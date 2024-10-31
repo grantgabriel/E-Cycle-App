@@ -1,3 +1,4 @@
+import 'package:e_cycle/page/profile.dart';
 import 'package:e_cycle/screens/article/article_detail.dart';
 import 'package:e_cycle/screens/home.dart';
 import 'package:e_cycle/screens/splash.dart';
@@ -13,14 +14,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const ArticleDetailPage()
-    );
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            useMaterial3: true,
+            scaffoldBackgroundColor: Color(0xff009421)),
+        home: const ProfilePage());
   }
 }
-
