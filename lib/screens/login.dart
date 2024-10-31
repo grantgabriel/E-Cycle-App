@@ -1,4 +1,5 @@
 import 'package:e_cycle/constants/colors.dart';
+import 'package:e_cycle/screens/navbar.dart';
 import 'package:flutter/material.dart';
 
 class Login extends StatelessWidget {
@@ -27,10 +28,9 @@ class Login extends StatelessWidget {
               height: 16,
             ),
             Container(
-              width: 370,
+              width: 320,
               height: 57,
               decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey, width: 1),
                 borderRadius: BorderRadius.circular(6),
               ),
               child: const TextField(
@@ -45,10 +45,17 @@ class Login extends StatelessWidget {
               height: 16,
             ),
             Container(  
-              width: 370,
+              width: 320,
               height: 57,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  // Navigate to home
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => Navbar()),
+                  );
+                  
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: primaryColor,
                   shape: RoundedRectangleBorder(
@@ -66,10 +73,12 @@ class Login extends StatelessWidget {
             ),
             
             SizedBox(
+              
               width: 372,
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(width: 169, height: 2, color: Colors.black),
+                  Container(width: 140, height: 2, color: Colors.black),
                   const SizedBox(
                     width: 5,
                   ),
@@ -77,7 +86,7 @@ class Login extends StatelessWidget {
                   const SizedBox(
                     width: 5,
                   ),
-                  Container(width: 169, height: 2, color: Colors.black),
+                  Container(width: 140, height: 2, color: Colors.black),
 
                 ],
               ),
@@ -87,7 +96,7 @@ class Login extends StatelessWidget {
             ),
 
             Container(
-              width: 373,
+              width: 320,
               height: 57,
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.grey, width: 1),
@@ -114,7 +123,7 @@ class Login extends StatelessWidget {
             ),
 
             Container(
-              width: 373,
+              width: 320,
               height: 57,
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.grey, width: 1),
