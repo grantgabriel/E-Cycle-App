@@ -1,4 +1,5 @@
 import 'package:e_cycle/screens/explore.dart';
+import 'package:e_cycle/screens/scan.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:e_cycle/constants/colors.dart';
@@ -19,7 +20,7 @@ class _NavbarState extends State<Navbar> {
     _pages = [
       const Home(),
       const Explore(),
-      const Home(),
+      Scan(),
       const Home(),
       const Home(),
     ];
@@ -49,7 +50,7 @@ class _NavbarState extends State<Navbar> {
         inactiveColorPrimary: Colors.grey,
       ),
       PersistentBottomNavBarItem(
-        icon: const Icon(Icons.map_outlined, size: 32),
+        icon: const Icon(Icons.explore_rounded, size: 32),
         title: "Jelajahi",
         activeColorPrimary: primaryColor,
         inactiveColorPrimary: Colors.grey,
