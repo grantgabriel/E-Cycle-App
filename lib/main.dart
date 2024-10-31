@@ -1,3 +1,4 @@
+
 import 'package:e_cycle/screens/splash.dart';
 import 'package:flutter/material.dart';
 
@@ -21,4 +22,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
