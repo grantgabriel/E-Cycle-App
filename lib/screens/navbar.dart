@@ -1,5 +1,5 @@
 import 'package:e_cycle/screens/explore.dart';
-import 'package:e_cycle/screens/scan.dart';
+import 'package:e_cycle/screens/scan/scan.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:e_cycle/constants/colors.dart';
