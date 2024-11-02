@@ -1,4 +1,5 @@
 import 'package:e_cycle/screens/explore.dart';
+import 'package:e_cycle/screens/scan/scan.dart';
 import 'package:e_cycle/screens/profile/profile.dart';
 import 'package:e_cycle/screens/scan.dart';
 import 'package:flutter/material.dart';
