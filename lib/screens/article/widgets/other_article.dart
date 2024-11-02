@@ -36,13 +36,13 @@ class OtherArticle extends StatelessWidget {
               children: [
                 Text(
                   title,
-                  style: AppStyles.articleTitleStyle.copyWith(
+                  style: AppStyles.titleStyle.copyWith(
                     fontSize: 13
                   ),
                 ),
                 Text(
                   addtionalInformation,
-                  style: AppStyles.articleDescriptionStyle.copyWith(
+                  style: AppStyles.descriptionStyle.copyWith(
                     fontSize: 10,
                     color: Colors.grey
                   ),
