@@ -52,7 +52,7 @@ class ArticleDetailPage extends StatelessWidget {
                 ),
                 child: SingleChildScrollView(
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       const ArticleContent(
                         title: "Sampah Elektronik Menumpuk? Seberapa Parah Sih?",
