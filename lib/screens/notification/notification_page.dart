@@ -8,7 +8,8 @@ class NotificationPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(0, 148, 33, 1),
       appBar: AppBar(
-        backgroundColor: Colors.green,
+        backgroundColor: const Color.fromRGBO(0, 148, 33, 1),
+        centerTitle: true,
         // elevation: 0,
         actions: [
           TextButton(
@@ -119,8 +120,8 @@ class NotificationTile extends StatelessWidget {
           CircleAvatar(
               child: Image.asset(
             imagePath,
-            width: 100,
-            height: 100,
+            width: 200,
+            height: 200,
           )),
           SizedBox(width: 12),
           Expanded(
