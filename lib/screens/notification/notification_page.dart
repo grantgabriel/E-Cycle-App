@@ -6,7 +6,7 @@ class NotificationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 76, 175, 80),
+      backgroundColor: const Color.fromRGBO(0, 148, 33, 1),
       appBar: AppBar(
         backgroundColor: Colors.green,
         // elevation: 0,
