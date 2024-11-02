@@ -1,4 +1,6 @@
-
+import 'package:e_cycle/constants/colors.dart';
+import 'package:e_cycle/page/profile.dart';
+import 'package:e_cycle/screens/profile/profile.dart';
 import 'package:e_cycle/screens/splash.dart';
 import 'package:flutter/material.dart';
 
