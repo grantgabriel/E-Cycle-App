@@ -31,17 +31,19 @@ class _OngoingTransactionCardState extends State<OngoingTransactionCard> {
         curve: Curves.easeOut,
         padding: const EdgeInsets.all(11),
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: greyColor,
           borderRadius: BorderRadius.circular(15),
           boxShadow: const [
             BoxShadow(
               color: Colors.black12,
-              blurRadius: 8,
+              blurRadius: 10,
+              // spreadRadius: 2,
               offset: Offset(0, 2)
             )
           ],
         ),
         height: _isExpanded ? 530 : 170,
+        // clipBehavior: Clip.hardEdge,
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

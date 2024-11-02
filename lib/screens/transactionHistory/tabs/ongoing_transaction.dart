@@ -9,15 +9,15 @@ class OngoingTransactionTab extends StatelessWidget {
     return const Column(
       children: [
         OngoingTransactionCard(),
-        SizedBox(height: 10),
+        SizedBox(height: 16),
         OngoingTransactionCard(),
-        SizedBox(height: 10),
+        SizedBox(height: 16),
         OngoingTransactionCard(),
-        SizedBox(height: 10),
+        SizedBox(height: 16),
         OngoingTransactionCard(),
-        SizedBox(height: 10),
+        SizedBox(height: 16),
         OngoingTransactionCard(),
-        SizedBox(height: 10),
+        SizedBox(height: 16),
         OngoingTransactionCard(),
       ],
     );
