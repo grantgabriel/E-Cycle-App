@@ -1,3 +1,7 @@
 {
+<<<<<<< HEAD
     "cmake.sourceDirectory": "C:/Users/BeeCrossLYNX/Documents/Pemrograman Mobile/clone/E-Cycle-App/linux"
+=======
+    "cmake.ignoreCMakeListsMissing": true
+>>>>>>> 9d3b1e8073a8b04d4f452687c5cc987c1763bf8e
 }
