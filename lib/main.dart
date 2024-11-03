@@ -1,3 +1,4 @@
+import 'package:e_cycle/screens/histori_transaksi/histori_transaksi.dart';
 import 'package:e_cycle/screens/splash.dart';
 import 'package:flutter/material.dart';
 
@@ -17,8 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: const Splash()
+      home: const Splash(),
     );
   }
 }
-
