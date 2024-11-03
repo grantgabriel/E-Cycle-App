@@ -1,3 +1,4 @@
+import 'package:e_cycle/screens/histori_transaksi/histori_transaksi.dart';
 import 'package:e_cycle/constants/colors.dart';
 import 'package:e_cycle/page/profile.dart';
 import 'package:e_cycle/screens/profile/profile.dart';
@@ -14,13 +15,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
-        ),
-        home: const Splash()
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
+      ),
+      home: const Splash(),
     );
   }
 }
