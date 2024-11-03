@@ -50,7 +50,9 @@ class CardHome extends StatelessWidget {
                         ],
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.of(context, rootNavigator: true).pushNamed("/withdraw");
+                        },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: primaryColor,
                           shape: RoundedRectangleBorder(
