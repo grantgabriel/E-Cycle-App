@@ -19,7 +19,7 @@ class ArticleContent extends StatelessWidget {
       children: [
         Text(
           title,
-          style: AppStyles.articleTitleStyle
+          style: AppStyles.titleStyle
         ),
         const SizedBox(height: 20),
         ClipRRect(
@@ -34,7 +34,7 @@ class ArticleContent extends StatelessWidget {
         const SizedBox(height: 13),
         Text(
           description,
-          style: AppStyles.articleDescriptionStyle,
+          style: AppStyles.descriptionStyle,
         ),
       ],
     );
