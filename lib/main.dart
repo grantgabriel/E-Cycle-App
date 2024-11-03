@@ -1,6 +1,8 @@
 import 'package:e_cycle/screens/histori_transaksi/histori_transaksi.dart';
 import 'package:e_cycle/constants/colors.dart';
-import 'package:e_cycle/page/profile.dart';
+// import 'package:e_cycle/screens/profile/Peringkat/leaderboard.dart';
+import 'package:e_cycle/screens/profile/Peringkat/national.dart';
+import 'package:e_cycle/screens/profile/Peringkat/regional.dart';
 import 'package:e_cycle/screens/profile/profile.dart';
 import 'package:e_cycle/screens/splash.dart';
 import 'package:flutter/material.dart';
@@ -15,6 +17,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+<<<<<<< HEAD
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home: const RegionalPage());
+=======
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
@@ -23,5 +34,6 @@ class MyApp extends StatelessWidget {
       ),
       home: const Splash(),
     );
+>>>>>>> 9d3b1e8073a8b04d4f452687c5cc987c1763bf8e
   }
 }
