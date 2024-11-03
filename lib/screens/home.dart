@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_cycle/constants/colors.dart';
 import 'package:e_cycle/models/news.dart';
+import 'package:e_cycle/screens/notification/notification_page.dart';
 import 'package:e_cycle/widgets/card_home.dart';
 import 'package:e_cycle/widgets/fitur_unggulan.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +46,13 @@ class Home extends StatelessWidget {
                   ),
                   // Notification Icon
                   IconButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  NotificationPage()));
+                    },
                     icon: const Icon(
                       Icons.notifications_none,
                       color: Colors.white,

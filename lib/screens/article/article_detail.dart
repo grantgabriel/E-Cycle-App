@@ -52,7 +52,7 @@ class ArticleDetailPage extends StatelessWidget {
                 ),
                 child: SingleChildScrollView(
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       const ArticleContent(
                         title: "Sampah Elektronik Menumpuk? Seberapa Parah Sih?",
@@ -74,7 +74,7 @@ class ArticleDetailPage extends StatelessWidget {
                       const SizedBox(height: 66),
                       Text(
                         "Artikel Lainnya",
-                        style: AppStyles.articleTitleStyle.copyWith(
+                        style: AppStyles.titleStyle.copyWith(
                           fontSize: 14
                         ),
                       ),
