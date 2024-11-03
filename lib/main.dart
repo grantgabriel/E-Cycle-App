@@ -1,3 +1,4 @@
+import 'package:e_cycle/screens/histori_transaksi/histori_transaksi.dart';
 import 'package:e_cycle/constants/colors.dart';
 import 'package:e_cycle/page/profile.dart';
 import 'package:e_cycle/screens/profile/profile.dart';
