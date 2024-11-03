@@ -1,5 +1,7 @@
 import 'package:e_cycle/constants/colors.dart';
-import 'package:e_cycle/page/profile.dart';
+// import 'package:e_cycle/screens/profile/Peringkat/leaderboard.dart';
+import 'package:e_cycle/screens/profile/Peringkat/national.dart';
+import 'package:e_cycle/screens/profile/Peringkat/regional.dart';
 import 'package:e_cycle/screens/profile/profile.dart';
 import 'package:e_cycle/screens/splash.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +22,6 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: const Splash());
+        home: const RegionalPage());
   }
 }
