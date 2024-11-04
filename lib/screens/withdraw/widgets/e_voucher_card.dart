@@ -3,7 +3,12 @@ import 'package:e_cycle/constants/colors.dart';
 import 'package:flutter/material.dart';
 
 class EVoucherCard extends StatelessWidget {
-  const EVoucherCard({super.key});
+  final Map<String, dynamic> eVoucher;
+
+  const EVoucherCard({
+    super.key,
+    required this.eVoucher
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +34,7 @@ class EVoucherCard extends StatelessWidget {
               topRight: Radius.circular(8)
             ),
             child: Image.asset(
-              "assets/images/voucher_1.png",
+              "assets/images/${eVoucher['imageName']}",
               fit: BoxFit.cover,
             )
           ),
@@ -40,7 +45,7 @@ class EVoucherCard extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                    "Voucher DISKON 15% Samsung Refurbished",
+                    eVoucher['voucher_title'],
                     style: AppStyles.descriptionStyle.copyWith(fontSize: 14),
                   ),
                 ),
@@ -54,7 +59,7 @@ class EVoucherCard extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    "150 Point",
+                    "${eVoucher['price']} Point",
                     style: AppStyles.descriptionStyle.copyWith(
                       color: purpleColor
                     ),

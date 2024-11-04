@@ -2,6 +2,7 @@ import 'package:e_cycle/constants/app_styles.dart';
 import 'package:e_cycle/constants/colors.dart';
 import 'package:e_cycle/screens/transactionHistory/tabs/completed_transaction.dart';
 import 'package:e_cycle/screens/transactionHistory/tabs/ongoing_transaction.dart';
+import 'package:e_cycle/widgets/toggle_tabs.dart';
 import 'package:flutter/material.dart';
 
 class TransactionHistory extends StatefulWidget {
@@ -61,68 +62,11 @@ class _TransactionHistoryState extends State<TransactionHistory> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Container(
-                      height: 42,
-                      decoration: BoxDecoration(
-                        color: greyColor,
-                        borderRadius: BorderRadius.circular(9)
-                      ),
-                      child: Row(
-                        children: [
-                          Expanded(
-                            child: GestureDetector(
-                              onTap: () => _onTabTapped(0),
-                              child: Container(
-                                padding: const EdgeInsets.all(9),
-                                decoration: BoxDecoration(
-                                  borderRadius: const BorderRadius.only(
-                                    topLeft: Radius.circular(9),
-                                    bottomLeft: Radius.circular(9)
-                                  ),
-                                  color: _selectedIndex == 0 ? primaryColor : greyColor
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    "Sedang Berlangsung",
-                                    style: AppStyles.titleStyle.copyWith(
-                                      fontSize: 14,
-                                      color: _selectedIndex == 0
-                                          ? Colors.white
-                                          : Colors.grey.shade500
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            )
-                          ),
-                          Expanded(
-                            child: GestureDetector(
-                              onTap: () => _onTabTapped(1),
-                              child: Container(
-                                padding: const EdgeInsets.all(9),
-                                decoration: BoxDecoration(
-                                  borderRadius: const BorderRadius.only(
-                                    topRight: Radius.circular(9),
-                                    bottomRight: Radius.circular(9)
-                                  ),
-                                  color: _selectedIndex == 1 ? primaryColor : greyColor,
-                                ),
-                                child: Center(
-                                  child: Text(
-                                    "Selesai",
-                                    style: AppStyles.titleStyle.copyWith(
-                                      fontSize: 14,
-                                      color: _selectedIndex == 1
-                                          ? Colors.white
-                                          : Colors.grey.shade500
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            )
-                          )
-                        ],
-                      ),
+                    ToggleTabs(
+                      tab1: "Sedang Berlangsung",
+                      tab2: "Selesai",
+                      selectedTab: _selectedIndex,
+                      onTabTapped: _onTabTapped
                     ),
                     const SizedBox(height: 24),
                     AnimatedSwitcher(
