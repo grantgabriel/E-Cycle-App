@@ -1,4 +1,6 @@
 import 'package:e_cycle/constants/app_styles.dart';
+import 'package:e_cycle/models/e_voucher_data.dart';
+import 'package:e_cycle/screens/withdraw/voucher_detail.dart';
 import 'package:e_cycle/screens/withdraw/widgets/e_voucher_card.dart';
 import 'package:flutter/material.dart';
 
@@ -21,17 +23,25 @@ class EVoucherTab extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 15),
-        const EVoucherCard(),
-        const SizedBox(height: 15),
-        const EVoucherCard(),
-        const SizedBox(height: 15),
-        const EVoucherCard(),
-        const SizedBox(height: 15),
-        const EVoucherCard(),
-        const SizedBox(height: 15),
-        const EVoucherCard(),
-        const SizedBox(height: 15),
-        const EVoucherCard(),
+        Column(
+          children: eVoucherData.map((eVoucherDataMap) => Column(
+            children: [
+              GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => VoucherDetailScreen(
+                    voucherData: eVoucherDataMap,
+                  ))
+                ),
+                child: EVoucherCard(
+                  eVoucher: eVoucherDataMap
+                ),
+              ),
+              const SizedBox(height: 15)
+            ],
+          )
+          ).toList(),
+        )
       ],
     );
   }
