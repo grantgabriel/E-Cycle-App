@@ -1,12 +1,4 @@
-import 'package:e_cycle/screens/histori_transaksi/histori_transaksi.dart';
-import 'package:e_cycle/constants/colors.dart';
-// import 'package:e_cycle/screens/profile/Peringkat/leaderboard.dart';
-import 'package:e_cycle/screens/profile/Peringkat/national.dart';
-import 'package:e_cycle/screens/profile/profile.dart';
 import 'package:e_cycle/screens/splash.dart';
-import 'package:e_cycle/screens/transactionHistory/transaction_history.dart';
-import 'package:e_cycle/screens/withdraw/withdraw.dart';
-import 'package:e_cycle/widgets/toggle_tabs.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -26,10 +18,7 @@ class MyApp extends StatelessWidget {
         // fontFamily: 'Poppins',
         useMaterial3: true,
       ),
-      routes: {
-        "/": (context) => const Splash(),
-        "/withdraw": (context) => const WithdrawPage(),
-      },
+      home: const Splash(),
     );
   }
 }
