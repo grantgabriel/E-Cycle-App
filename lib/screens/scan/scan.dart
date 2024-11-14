@@ -1,6 +1,9 @@
+import 'dart:io';
+import 'dart:convert';
 import 'package:camera/camera.dart';
 import 'package:e_cycle/screens/scan/widgets/estimasi.dart';
 import 'package:flutter/material.dart';
+import 'package:google_generative_ai/google_generative_ai.dart';
 
 class Scan extends StatefulWidget {
   const Scan({Key? key}) : super(key: key);
@@ -12,9 +15,12 @@ class Scan extends StatefulWidget {
 class _ScanState extends State<Scan> with SingleTickerProviderStateMixin {
   CameraController? _cameraController;
   List<CameraDescription>? cameras;
+
   bool _isCameraInitialized = false;
   bool showInfo = false;
+  String result = 'Unknown';
 
+  /* --------------------------------- animasi -------------------------------- */
   late final AnimationController _animationController;
   late final Animation<double> _animation;
 
@@ -23,21 +29,21 @@ class _ScanState extends State<Scan> with SingleTickerProviderStateMixin {
     super.initState();
     _initializeCamera();
 
-    // Initialize animation controller for up and down bounce effect
+    /* ------------------------------ animasi start ----------------------------- */
     _animationController = AnimationController(
       duration: const Duration(seconds: 1),
       vsync: this,
     );
 
-    // Define an animation that oscillates between 20 and 40
     _animation = Tween<double>(begin: 20, end: 40).animate(
       CurvedAnimation(parent: _animationController, curve: Curves.easeInOut),
     );
 
-    // Start the animation with reverse repeats for a smooth bounce effect
     _animationController.repeat(reverse: true);
+    /* ------------------------------- animasi end ------------------------------ */
   }
 
+  /* ------------------------------ mulai kamera ------------------------------ */
   Future<void> _initializeCamera() async {
     try {
       cameras = await availableCameras();
@@ -67,14 +73,84 @@ class _ScanState extends State<Scan> with SingleTickerProviderStateMixin {
     super.dispose();
   }
 
-  void _onCameraTap() async {
-    if (_cameraController != null &&
-        _cameraController!.value.isStreamingImages) {
-      await _cameraController?.pausePreview(); // Pause the preview
+/* -------------------------- Image classification Start -------------------------- */
+  Future<void> _classifyImage(File imageFile) async {
+    try {
+      const apiKey = 'AIzaSyD8blGqOYS86v0zV50BW4csSp2tI4n_sZg';
+
+      if (apiKey == null) {
+        stderr.writeln('No API key provided');
+        exit(1);
+      }
+
+      const prompt =
+          'Classify this electronic image. Provide a “name” output for the brand name if present(“<Electronic Type> - <Full Brand>”), if not present(<Electronic Type>)';
+
+      final imageBytes = await imageFile.readAsBytes();
+
+      final content = [
+        Content.multi([
+          TextPart(prompt),
+          DataPart('image/jpg', imageBytes),
+        ])
+      ];
+
+      final model = GenerativeModel(
+        model: 'gemini-1.5-pro',
+        apiKey: apiKey,
+        generationConfig: GenerationConfig(
+          temperature: 1,
+          topK: 40,
+          topP: 0.95,
+          maxOutputTokens: 8192,
+          responseMimeType: 'application/json',
+          responseSchema: Schema(
+            SchemaType.object,
+            properties: {
+              "name": Schema(
+                SchemaType.string,
+              ),
+            },
+          ),
+        ),
+      );
+
+      final response = await model.generateContent(content);
+
+      setState(() {
+        result = response.text != null
+            ? jsonDecode(response.text!)['name'] ?? 'No result available'
+            : 'No result available';
+      });
+    } catch (e, stackTrace) {
+      print("Error classifying image: $e");
+      print("Stack trace: $stackTrace");
     }
-    setState(() {
-      showInfo = true;
-    });
+  }
+/* ------------------------ image classification end ------------------------ */
+
+/* -------------------- tangkap dan klasifikasikan gambar ------------------- */
+  Future<void> _captureAndClassifyImage() async {
+    if (_cameraController != null && _cameraController!.value.isInitialized) {
+      try {
+        // Take a picture and get the file path
+        final XFile imageFile = await _cameraController!.takePicture();
+
+        // Compress and classify the image
+        await _classifyImage(File(imageFile.path));
+
+        setState(() {
+          showInfo = true;
+        });
+      } catch (e) {
+        print("Error capturing and classifying image: $e");
+      }
+    }
+  }
+
+  /* ---------------------------- fungsi tap kamera --------------------------- */
+  void _onCameraTap() async {
+    await _captureAndClassifyImage();
   }
 
   @override
@@ -84,22 +160,19 @@ class _ScanState extends State<Scan> with SingleTickerProviderStateMixin {
         onTap: _onCameraTap,
         child: Stack(
           children: [
-            // Camera preview
             _isCameraInitialized
                 ? CameraPreview(_cameraController!)
                 : const Center(child: CircularProgressIndicator()),
-
-            // Overlay for scan frame and instructions
             Positioned.fill(
               child: Container(
                 color: Colors.black.withOpacity(0.3),
                 child: Stack(
                   children: [
-                    Positioned(
+                    const Positioned(
                       top: 40,
                       left: 0,
                       right: 0,
-                      child: const Text(
+                      child: Text(
                         "Sesuaikan elektronik dengan bingkai",
                         textAlign: TextAlign.center,
                         style: TextStyle(
@@ -119,8 +192,6 @@ class _ScanState extends State<Scan> with SingleTickerProviderStateMixin {
                 ),
               ),
             ),
-
-            // Display information box with animation after tapping
             if (showInfo)
               AnimatedBuilder(
                 animation: _animation,
@@ -156,7 +227,7 @@ class _ScanState extends State<Scan> with SingleTickerProviderStateMixin {
                             const Text(
                               "Elektronik",
                               style: TextStyle(
-                                  fontSize: 18, fontWeight: FontWeight.bold),
+                                  fontSize: 16, fontWeight: FontWeight.bold),
                             ),
                             const SizedBox(height: 8),
                             Row(
@@ -167,17 +238,17 @@ class _ScanState extends State<Scan> with SingleTickerProviderStateMixin {
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    const Text(
-                                      "Handphone",
-                                      style: TextStyle(
-                                          fontSize: 16,
+                                    Text(
+                                      result,
+                                      style: const TextStyle(
+                                          fontSize: 14,
                                           fontWeight: FontWeight.bold),
                                     ),
                                     const SizedBox(height: 4),
                                     Text(
                                       "Taruh di tempat drop-off e-cycle \nuntuk diremanufaktur",
                                       style: TextStyle(
-                                          fontSize: 14,
+                                          fontSize: 12,
                                           color: Colors.grey[700]),
                                     ),
                                   ],
