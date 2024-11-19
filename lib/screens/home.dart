@@ -96,34 +96,29 @@ class Home extends StatelessWidget {
 
                       const SizedBox(height: 10),
 
-                      SingleChildScrollView(
+                      const SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
                           children: [
-                            const FiturUnggulan(
+                            FiturUnggulan(
                               imagePath: "assets/images/icon_motorbike.png",
                               label: "E-Waste Pick-up",
+                              page: CommunityPage(),
                             ),
-                            const FiturUnggulan(
+                            FiturUnggulan(
                               imagePath: "assets/images/icon_withdraw.png",
                               label: "E-Point Withdraw",
+                              page: CommunityPage(),
                             ),
-                            GestureDetector(
-                              onTap: () => Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      const CommunityPage(),
-                                ),
-                              ),
-                              child: const FiturUnggulan(
-                                imagePath: "assets/images/icon_community.png",
-                                label: "E-Waste Community",
-                              ),
+                            FiturUnggulan(
+                              imagePath: "assets/images/icon_community.png",
+                              label: "E-Waste Community",
+                              page: CommunityPage(),
                             ),
-                            const FiturUnggulan(
+                            FiturUnggulan(
                               imagePath: "assets/images/icon_cart.png",
                               label: "E-Shop Keranjang",
+                              page: CommunityPage(),
                             ),
                           ],
                         ),
