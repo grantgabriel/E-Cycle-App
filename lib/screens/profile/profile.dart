@@ -1,8 +1,10 @@
 import 'package:e_cycle/constants/colors.dart';
+import 'package:e_cycle/screens/profile/Peringkat/national.dart';
 import 'package:e_cycle/screens/profile/widgets/header.dart';
 import 'package:e_cycle/screens/profile/widgets/list_menu.dart';
 import 'package:e_cycle/screens/profile/widgets/list_menua.dart';
 import 'package:e_cycle/screens/profile/widgets/logout.dart';
+import 'package:e_cycle/screens/transactionHistory/transaction_history.dart';
 import 'package:flutter/material.dart';
 
 class ProfilePage extends StatelessWidget {
@@ -129,9 +131,18 @@ class ProfilePage extends StatelessWidget {
                 const SizedBox(
                   height: 35,
                 ),
-                ListMenua(
-                    title: 'Histori Transaksi',
-                    image: 'assets/images/v_history.png'),
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) =>
+                          const TransactionHistory(),
+                    ),
+                  ),
+                  child: ListMenua(
+                      title: 'Histori Transaksi',
+                      image: 'assets/images/v_history.png'),
+                ),
                 const SizedBox(
                   height: 10,
                 ),
@@ -139,8 +150,16 @@ class ProfilePage extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                ListMenua(
-                    title: 'Peringkat', image: 'assets/images/v_rank.png'),
+                GestureDetector(
+                  onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => const NationalPage(),
+                    ),
+                  ),
+                  child: ListMenua(
+                      title: 'Peringkat', image: 'assets/images/v_rank.png'),
+                ),
                 const SizedBox(
                   height: 10,
                 ),

@@ -1,4 +1,5 @@
 import 'package:e_cycle/constants/colors.dart';
+import 'package:e_cycle/screens/withdraw/withdraw.dart';
 import 'package:flutter/material.dart';
 
 class CardHome extends StatelessWidget {
@@ -50,9 +51,12 @@ class CardHome extends StatelessWidget {
                         ],
                       ),
                       ElevatedButton(
-                        onPressed: () {
-                          Navigator.of(context, rootNavigator: true).pushNamed("/withdraw");
-                        },
+                        onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (BuildContext context) => const WithdrawPage()
+                          )
+                        ),
                         style: ElevatedButton.styleFrom(
                           backgroundColor: primaryColor,
                           shape: RoundedRectangleBorder(

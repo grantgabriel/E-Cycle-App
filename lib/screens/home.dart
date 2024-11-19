@@ -1,6 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_cycle/constants/colors.dart';
 import 'package:e_cycle/models/news.dart';
+import 'package:e_cycle/screens/article/article_detail.dart';
+import 'package:e_cycle/screens/community/community.dart';
 import 'package:e_cycle/screens/notification/notification_page.dart';
 import 'package:e_cycle/widgets/card_home.dart';
 import 'package:e_cycle/widgets/fitur_unggulan.dart';
@@ -101,18 +103,22 @@ class Home extends StatelessWidget {
                             FiturUnggulan(
                               imagePath: "assets/images/icon_motorbike.png",
                               label: "E-Waste Pick-up",
+                              page: CommunityPage(),
                             ),
                             FiturUnggulan(
                               imagePath: "assets/images/icon_withdraw.png",
                               label: "E-Point Withdraw",
+                              page: CommunityPage(),
                             ),
                             FiturUnggulan(
                               imagePath: "assets/images/icon_community.png",
                               label: "E-Waste Community",
+                              page: CommunityPage(),
                             ),
                             FiturUnggulan(
                               imagePath: "assets/images/icon_cart.png",
                               label: "E-Shop Keranjang",
+                              page: CommunityPage(),
                             ),
                           ],
                         ),
@@ -209,69 +215,80 @@ class Home extends StatelessWidget {
 
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 25.0),
-                        child: Column(
-                          children: berita
-                              .map(
-                                (item) => Column(
-                                  children: [
-                                    Row(
-                                      children: [
-                                        Image.asset(
-                                          item.imageUrl,
-                                          width: 120,
-                                        ),
-                                        const SizedBox(width: 10),
-                                        Expanded(
-                                          child: Padding(
-                                            padding: const EdgeInsets.symmetric(
-                                                vertical: 5.0),
-                                            child: Column(
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                Text(
-                                                  item.title,
-                                                  style: const TextStyle(
-                                                    fontSize: 12,
-                                                    fontWeight: FontWeight.w600,
+                        child: GestureDetector(
+                          onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (BuildContext context) =>
+                                  const ArticleDetailPage(),
+                            ),
+                          ),
+                          child: Column(
+                            children: berita
+                                .map(
+                                  (item) => Column(
+                                    children: [
+                                      Row(
+                                        children: [
+                                          Image.asset(
+                                            item.imageUrl,
+                                            width: 120,
+                                          ),
+                                          const SizedBox(width: 10),
+                                          Expanded(
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.symmetric(
+                                                      vertical: 5.0),
+                                              child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Text(
+                                                    item.title,
+                                                    style: const TextStyle(
+                                                      fontSize: 12,
+                                                      fontWeight:
+                                                          FontWeight.w600,
+                                                    ),
                                                   ),
-                                                ),
-                                                const SizedBox(height: 7),
-                                                Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  children: [
-                                                    Text(
-                                                      item.date,
-                                                      style: const TextStyle(
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w400,
+                                                  const SizedBox(height: 7),
+                                                  Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
+                                                    children: [
+                                                      Text(
+                                                        item.date,
+                                                        style: const TextStyle(
+                                                          fontSize: 12,
+                                                          fontWeight:
+                                                              FontWeight.w400,
+                                                        ),
                                                       ),
-                                                    ),
-                                                    Text(
-                                                      item.link,
-                                                      style: const TextStyle(
-                                                        fontSize: 12,
-                                                        fontWeight:
-                                                            FontWeight.w400,
-                                                        color: primaryColor,
+                                                      Text(
+                                                        item.link,
+                                                        style: const TextStyle(
+                                                          fontSize: 12,
+                                                          fontWeight:
+                                                              FontWeight.w400,
+                                                          color: primaryColor,
+                                                        ),
                                                       ),
-                                                    ),
-                                                  ],
-                                                ),
-                                              ],
+                                                    ],
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           ),
-                                        ),
-                                      ],
-                                    ),
-                                    const SizedBox(height: 10),
-                                  ],
-                                ),
-                              )
-                              .toList(),
+                                        ],
+                                      ),
+                                      const SizedBox(height: 10),
+                                    ],
+                                  ),
+                                )
+                                .toList(),
+                          ),
                         ),
                       ),
 

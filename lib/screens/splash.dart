@@ -11,32 +11,32 @@ class Splash extends StatefulWidget {
 }
 
 class _SplashState extends State<Splash> {
-
   // Logic Splash Screen 5 seconds to Login Page
   @override
   void initState() {
     super.initState();
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
-    Future.delayed(const Duration(seconds: 5), () {
-      Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (_) => const Login())
-      );
+    Future.delayed(const Duration(milliseconds: 2300), () {
+      Navigator.of(context)
+          .pushReplacement(MaterialPageRoute(builder: (_) => const Login()));
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: primaryColor,
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          // Justify between
-          Image.asset('assets/images/ornamen_atas.png'),
-          Image.asset('assets/images/logo.png', width: 150,),
-          Image.asset('assets/images/ornamen_bawah.png'),
-        ],
-      )
-    );
+        backgroundColor: primaryColor,
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            // Justify between
+            Image.asset('assets/images/ornamen_atas.png'),
+            Image.asset(
+              'assets/images/logo.png',
+              width: 150,
+            ),
+            Image.asset('assets/images/ornamen_bawah.png'),
+          ],
+        ));
   }
 }
