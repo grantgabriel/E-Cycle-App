@@ -3,9 +3,10 @@ import 'package:e_cycle/constants/colors.dart';
 import 'package:e_cycle/models/news.dart';
 import 'package:e_cycle/screens/article/article_detail.dart';
 import 'package:e_cycle/screens/community/community.dart';
+import 'package:e_cycle/screens/e_waste_pickup/e_waste_pickup.dart';
 import 'package:e_cycle/screens/notification/notification_page.dart';
-import 'package:e_cycle/widgets/card_home.dart';
-import 'package:e_cycle/widgets/fitur_unggulan.dart';
+import 'package:e_cycle/screens/widgets/card_home.dart';
+import 'package:e_cycle/screens/widgets/fitur_unggulan.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
@@ -103,7 +104,7 @@ class Home extends StatelessWidget {
                             FiturUnggulan(
                               imagePath: "assets/images/icon_motorbike.png",
                               label: "E-Waste Pick-up",
-                              page: CommunityPage(),
+                              page: EWastePickupScreen(),
                             ),
                             FiturUnggulan(
                               imagePath: "assets/images/icon_withdraw.png",

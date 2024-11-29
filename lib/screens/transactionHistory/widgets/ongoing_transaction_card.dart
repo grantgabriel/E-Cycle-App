@@ -1,10 +1,10 @@
 import 'package:e_cycle/constants/colors.dart';
 import 'package:e_cycle/screens/transactionHistory/widgets/double_text_spacebeetween.dart';
 import 'package:e_cycle/screens/transactionHistory/widgets/triple_content_row.dart';
-import 'package:e_cycle/widgets/dashed_line.dart';
 import 'package:flutter/material.dart';
 
 import '../../../constants/app_styles.dart';
+import '../../widgets/dashed_line.dart';
 
 class OngoingTransactionCard extends StatefulWidget {
   const OngoingTransactionCard({super.key});
