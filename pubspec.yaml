@@ -42,6 +42,11 @@ dependencies:
   persistent_bottom_nav_bar: ^6.2.1
   motion_tab_bar: ^2.0.4
   camera: ^0.11.0+2
+  path_provider: ^2.1.5
+  http: ^1.2.2
+  google_generative_ai: ^0.4.6
+  image_picker: ^1.1.2
+  image: ^4.3.0
 
 dev_dependencies:
   flutter_test:
