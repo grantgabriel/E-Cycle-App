@@ -2,8 +2,9 @@ import 'package:e_cycle/constants/app_styles.dart';
 import 'package:e_cycle/constants/colors.dart';
 import 'package:e_cycle/screens/transactionHistory/tabs/completed_transaction.dart';
 import 'package:e_cycle/screens/transactionHistory/tabs/ongoing_transaction.dart';
-import 'package:e_cycle/widgets/toggle_tabs.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/toggle_tabs.dart';
 
 class TransactionHistory extends StatefulWidget {
   const TransactionHistory({super.key});
