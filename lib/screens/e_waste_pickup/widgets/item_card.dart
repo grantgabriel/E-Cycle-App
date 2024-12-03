@@ -24,28 +24,34 @@ class ItemCard extends StatelessWidget {
       elevation: 2,
       child: ListTile(
         leading: IconButton(
-          onPressed: onRemove,
-          icon:  const Icon(Icons.cancel, color: Colors.red,)
-        ),
+            onPressed: onRemove,
+            icon: const Icon(
+              Icons.cancel,
+              color: Colors.red,
+            )),
         title: Text(
           title,
-          style: AppStyles.titleStyle.copyWith(fontSize: 14),
+          style: AppStyles.titleStyle.copyWith(fontSize: 13),
         ),
         trailing: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
             IconButton(
-              onPressed: onDecrease,
-              icon: const Icon(Icons.remove_circle_outline, color: Colors.red,)
-            ),
+                onPressed: onDecrease,
+                icon: const Icon(
+                  Icons.remove_circle_outline,
+                  color: Colors.red,
+                )),
             Text(
               '$quantity',
               style: AppStyles.boldStyle.copyWith(fontSize: 12),
             ),
             IconButton(
-              onPressed: onIncrease,
-              icon: const Icon(Icons.add_circle_outline, color: primaryColor,)
-            )
+                onPressed: onIncrease,
+                icon: const Icon(
+                  Icons.add_circle_outline,
+                  color: primaryColor,
+                ))
           ],
         ),
       ),
