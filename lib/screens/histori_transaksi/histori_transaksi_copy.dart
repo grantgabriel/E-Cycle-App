@@ -1,5 +1,4 @@
 import 'package:e_cycle/constants/colors.dart';
-import 'package:e_cycle/widgets/new_header.dart';
 import 'package:flutter/material.dart';
 
 class HistoriTransaksi extends StatelessWidget {
@@ -9,7 +8,26 @@ class HistoriTransaksi extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: primaryColor,
-      appBar: const NewHeader(title: 'Histori Transaksi'),
+      appBar: AppBar(
+        backgroundColor: primaryColor,
+        leading: IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.arrow_back_ios_new,
+            weight: 4,
+          ),
+          color: Colors.white,
+        ),
+        centerTitle: true,
+        title: const Text(
+          "Histori Transaksi",
+          style: TextStyle(
+              color: Colors.white,
+              fontSize: 24,
+              fontWeight: FontWeight.w500,
+              fontFamily: "Poppins"),
+        ),
+      ),
       body: Container(
         decoration: const BoxDecoration(
           color: Colors.white,
@@ -596,3 +614,16 @@ class HistoriTransaksi extends StatelessWidget {
     );
   }
 }
+// class HistoriTransaksi extends StatelessWidget {
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//       appBar: AppBar(
+//         title: Center(child: Text('Histori Transaksi')),
+//       ),
+//       body: Center(
+//         child: Text('Histori Transaksi'),
+//       ),
+//     );
+//   }
+// }

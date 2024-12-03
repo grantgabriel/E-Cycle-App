@@ -1,5 +1,6 @@
 import 'package:e_cycle/screens/histori_transaksi/histori_transaksi.dart';
 import 'package:e_cycle/constants/colors.dart';
+import 'package:e_cycle/screens/home.dart';
 // import 'package:e_cycle/screens/profile/Peringkat/leaderboard.dart';
 import 'package:e_cycle/screens/profile/Peringkat/national.dart';
 import 'package:e_cycle/screens/profile/profile.dart';
@@ -27,7 +28,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: {
-        "/": (context) => const Splash(),
+        "/": (context) => const WithdrawPage(),
         "/withdraw": (context) => const WithdrawPage(),
       },
     );
