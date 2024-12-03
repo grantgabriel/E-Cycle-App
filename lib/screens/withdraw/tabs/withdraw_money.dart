@@ -10,17 +10,17 @@ class WithdrawMoneyTab extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            padding: const EdgeInsets.symmetric(horizontal: 5.0),
             child: Text(
               'Tukar point-mu menjadi saldo untukmu',
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
             ),
           ),
-          SizedBox(height: 24.0),
+          SizedBox(height: 16.0),
           // Kategori Tukar ke E-wallet
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            padding: const EdgeInsets.symmetric(horizontal: 5.0),
             child: Text(
               'Tukar ke E-wallet',
               style: TextStyle(
@@ -42,57 +42,66 @@ class WithdrawMoneyTab extends StatelessWidget {
           ),
           SizedBox(height: 16.0),
           Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: GridView.count(
-              crossAxisCount: 4,
-              shrinkWrap: true,
-              mainAxisSpacing: 10,
-              crossAxisSpacing: 10,
-              physics: NeverScrollableScrollPhysics(),
-              children: [
-                _buildBankItem(
-                  context,
-                  icon: Icons.account_balance,
-                  label: 'BNI',
-                ),
-                _buildBankItem(
-                  context,
-                  icon: Icons.account_balance_wallet,
-                  label: 'Mandiri',
-                ),
-                _buildBankItem(
-                  context,
-                  icon: Icons.account_balance,
-                  label: 'BRI',
-                ),
-                _buildBankItem(
-                  context,
-                  icon: Icons.account_balance,
-                  label: 'BTN',
-                ),
-                _buildBankItem(
-                  context,
-                  icon: Icons.account_balance,
-                  label: 'BSI',
-                ),
-                _buildBankItem(
-                  context,
-                  icon: Icons.account_balance,
-                  label: 'BCA',
-                ),
-                _buildBankItem(
-                  context,
-                  icon: Icons.account_balance,
-                  label: 'SeaBank',
-                ),
-                _buildBankItem(
-                  context,
-                  icon: Icons.more_horiz,
-                  label: 'Lainnya',
-                ),
-              ],
-            ),
-          )
+              padding: const EdgeInsets.all(5.0),
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      _buildBankItem(
+                        context,
+                        icon: Icons.account_balance,
+                        label: 'BNI',
+                      ),
+                      SizedBox(width: 16.0),
+                      _buildBankItem(
+                        context,
+                        icon: Icons.account_balance_wallet,
+                        label: 'Mandiri',
+                      ),
+                      SizedBox(width: 16.0),
+                      _buildBankItem(
+                        context,
+                        icon: Icons.account_balance,
+                        label: 'BRI',
+                      ),
+                      SizedBox(width: 16.0),
+                      _buildBankItem(
+                        context,
+                        icon: Icons.account_balance,
+                        label: 'BTN',
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 16.0),
+                  Row(
+                    children: [
+                      _buildBankItem(
+                        context,
+                        icon: Icons.account_balance,
+                        label: 'BSI',
+                      ),
+                      SizedBox(width: 16.0),
+                      _buildBankItem(
+                        context,
+                        icon: Icons.account_balance,
+                        label: 'BCA',
+                      ),
+                      SizedBox(width: 16.0),
+                      _buildBankItem(
+                        context,
+                        icon: Icons.account_balance,
+                        label: 'SeaBank',
+                      ),
+                      SizedBox(width: 16.0),
+                      _buildBankItem(
+                        context,
+                        icon: Icons.more_horiz,
+                        label: 'Lainnya',
+                      ),
+                    ],
+                  )
+                ],
+              ))
         ],
       ),
     );
@@ -108,6 +117,7 @@ class WithdrawMoneyTab extends StatelessWidget {
         );
       },
       child: Column(
+        mainAxisSize: MainAxisSize.min, // Membatasi tinggi agar sesuai konten
         children: [
           CircleAvatar(
             radius: 30,

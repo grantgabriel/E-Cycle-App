@@ -10,15 +10,6 @@ class OngoingTransactionTab extends StatelessWidget {
       children: [
         OngoingTransactionCard(),
         SizedBox(height: 16),
-        OngoingTransactionCard(),
-        SizedBox(height: 16),
-        OngoingTransactionCard(),
-        SizedBox(height: 16),
-        OngoingTransactionCard(),
-        SizedBox(height: 16),
-        OngoingTransactionCard(),
-        SizedBox(height: 16),
-        OngoingTransactionCard(),
       ],
     );
   }
