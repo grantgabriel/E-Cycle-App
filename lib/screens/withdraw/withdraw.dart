@@ -40,24 +40,24 @@ class _WithdrawPageState extends State<WithdrawPage> {
                 ),
                 Expanded(
                     child: Text(
-                      "E-Point",
-                      textAlign: TextAlign.center,
-                      style: AppStyles.headerPageStyle.copyWith(color: Colors.white),
-                    )
-                ),
+                  "E-Point",
+                  textAlign: TextAlign.center,
+                  style:
+                      AppStyles.headerPageStyle.copyWith(color: Colors.white),
+                )),
                 const SizedBox(width: 50)
               ],
             ),
           ),
           Expanded(
             child: Container(
-              padding: const EdgeInsets.only(left: 30, right: 30, bottom: 30, top: 20),
+              padding: const EdgeInsets.only(
+                  left: 30, right: 30, bottom: 30, top: 20),
               decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30),
-                  topRight: Radius.circular(30)
-                ),
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30)),
               ),
               child: SingleChildScrollView(
                 child: Column(
@@ -70,11 +70,10 @@ class _WithdrawPageState extends State<WithdrawPage> {
                     ),
                     const SizedBox(height: 24),
                     AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 300),
-                      child: _selectedTab == 0
-                          ? const WithdrawMoneyTab()
-                          : const EVoucherTab()
-                    )
+                        duration: const Duration(milliseconds: 300),
+                        child: _selectedTab == 0
+                            ? const WithdrawMoneyTab()
+                            : const EVoucherTab())
                   ],
                 ),
               ),
@@ -84,4 +83,4 @@ class _WithdrawPageState extends State<WithdrawPage> {
       ),
     );
   }
-}
+} 
