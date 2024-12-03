@@ -8,11 +8,8 @@ class DailyTransaction extends StatelessWidget {
   final String date;
   final List<Map<String, dynamic>> transactionData;
 
-  const DailyTransaction({
-    super.key,
-    required this.date,
-    required this.transactionData
-  });
+  const DailyTransaction(
+      {super.key, required this.date, required this.transactionData});
 
   @override
   Widget build(BuildContext context) {
@@ -25,13 +22,11 @@ class DailyTransaction extends StatelessWidget {
         ),
         const Divider(),
         const SizedBox(height: 10),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 19),
-          child: Column(
-            children: transactionData.map((transactionMap) => TransactionTile(
-              transactionData: transactionMap)
-            ).toList() ,
-          )
+        Column(
+          children: transactionData
+              .map((transactionMap) =>
+                  TransactionTile(transactionData: transactionMap))
+              .toList(),
         )
       ],
     );

@@ -20,7 +20,7 @@ class _ScanState extends State<Scan> with SingleTickerProviderStateMixin {
   bool showInfo = false;
   String result = 'Unknown';
 
-  /* --------------------------------- animasi -------------------------------- */
+  /* --------------------------------- variabel animasi ------------------------- */
   late final AnimationController _animationController;
   late final Animation<double> _animation;
 

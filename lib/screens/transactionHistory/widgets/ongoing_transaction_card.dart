@@ -35,14 +35,13 @@ class _OngoingTransactionCardState extends State<OngoingTransactionCard> {
           borderRadius: BorderRadius.circular(15),
           boxShadow: const [
             BoxShadow(
-              color: Colors.black12,
-              blurRadius: 10,
-              // spreadRadius: 2,
-              offset: Offset(0, 2)
-            )
+                color: Colors.black12,
+                blurRadius: 10,
+                // spreadRadius: 2,
+                offset: Offset(0, 2))
           ],
         ),
-        height: _isExpanded ? 530 : 170,
+        height: _isExpanded ? 530 : 195,
         // clipBehavior: Clip.hardEdge,
         child: SingleChildScrollView(
           child: Column(
@@ -67,12 +66,14 @@ class _OngoingTransactionCardState extends State<OngoingTransactionCard> {
                 children: [
                   Text(
                     "Sisa waktu pencarian E-Picker: 180 detik",
-                    style: AppStyles.descriptionStyle.copyWith(color: primaryColor),
+                    style: AppStyles.descriptionStyle
+                        .copyWith(color: primaryColor),
                   ),
                   const SizedBox(height: 5),
                   Text(
                     "Apabila waktu pencarian habis, penjemputan akan dibatalkan secara otomatis",
-                    style: AppStyles.descriptionStyle.copyWith(fontWeight: FontWeight.w400),
+                    style: AppStyles.descriptionStyle
+                        .copyWith(fontWeight: FontWeight.w400),
                   ),
                 ],
               ),
@@ -87,7 +88,8 @@ class _OngoingTransactionCardState extends State<OngoingTransactionCard> {
                         const SizedBox(width: 8),
                         Text(
                           "17:30 - 19:30",
-                          style: AppStyles.descriptionStyle.copyWith(fontSize: 14),
+                          style:
+                              AppStyles.descriptionStyle.copyWith(fontSize: 14),
                         )
                       ],
                     ),
@@ -98,9 +100,7 @@ class _OngoingTransactionCardState extends State<OngoingTransactionCard> {
                         Text(
                           "Jl. Abdul Hakim, Padang Bulan",
                           style: AppStyles.titleStyle.copyWith(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w700
-                          ),
+                              fontSize: 14, fontWeight: FontWeight.w700),
                         )
                       ],
                     )
@@ -113,26 +113,18 @@ class _OngoingTransactionCardState extends State<OngoingTransactionCard> {
                   children: [
                     Text(
                       "Detail Sampah Elektronik",
-                      style: AppStyles.titleStyle.copyWith(
-                        fontSize: 14,
-                        fontWeight: FontWeight.w700
-                      ),
+                      style: AppStyles.titleStyle
+                          .copyWith(fontSize: 14, fontWeight: FontWeight.w700),
                     ),
                     const SizedBox(height: 8),
                     const DoubleTextSpacebeetween(
-                      text1: "Smartphone Samsung J15",
-                      text2: "1 item"
-                    ),
+                        text1: "Smartphone Samsung J15", text2: "1 item"),
                     const SizedBox(height: 3),
                     const DoubleTextSpacebeetween(
-                      text1: "LG A34 TV ELD",
-                      text2: "1 item"
-                    ),
+                        text1: "LG A34 TV ELD", text2: "1 item"),
                     const SizedBox(height: 3),
                     const DoubleTextSpacebeetween(
-                      text1: "AC Samsung",
-                      text2: "1 item"
-                    ),
+                        text1: "AC Samsung", text2: "1 item"),
                   ],
                 ),
                 const Divider(),
@@ -155,24 +147,22 @@ class _OngoingTransactionCardState extends State<OngoingTransactionCard> {
                 const DashedLine(),
                 const SizedBox(height: 8),
                 const TripleContentRow(
-                  imgName: 'coin_icon.png',
-                  text1: 'Estimasi pendapatan',
-                  text2: '1.200.000'
-                ),
+                    imgName: 'coin_icon.png',
+                    text1: 'Estimasi pendapatan',
+                    text2: '1.200.000'),
                 Padding(
                   padding: const EdgeInsets.only(top: 20, bottom: 15),
                   child: Center(
                     child: OutlinedButton(
                       onPressed: _onTapWidget,
                       style: OutlinedButton.styleFrom(
-                        side: const BorderSide(color: Colors.red),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(12)
-                        )
-                      ),
+                          side: const BorderSide(color: Colors.red),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12))),
                       child: Text(
                         "BATAL",
-                        style: AppStyles.descriptionStyle.copyWith(color: Colors.red),
+                        style: AppStyles.descriptionStyle
+                            .copyWith(color: Colors.red),
                       ),
                     ),
                   ),
@@ -187,8 +177,7 @@ class _OngoingTransactionCardState extends State<OngoingTransactionCard> {
                     width: MediaQuery.of(context).size.width * .36,
                     decoration: BoxDecoration(
                         color: Colors.grey.shade400,
-                        borderRadius: BorderRadius.circular(2)
-                    ),
+                        borderRadius: BorderRadius.circular(2)),
                   ),
                 ),
               ),
@@ -199,4 +188,3 @@ class _OngoingTransactionCardState extends State<OngoingTransactionCard> {
     );
   }
 }
-
