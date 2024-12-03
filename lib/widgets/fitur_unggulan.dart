@@ -5,16 +5,27 @@ class FiturUnggulan extends StatelessWidget {
 
   final String imagePath;
   final String label;
+  final Widget page;
 
 
-  const FiturUnggulan({super.key, required this.imagePath, required this.label});
+  const FiturUnggulan({
+    super.key,
+    required this.imagePath,
+    required this.label,
+    required this.page
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         ElevatedButton(
-            onPressed: () {},
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (BuildContext context) => page,
+              ),
+            ),
             style: ElevatedButton.styleFrom(
               backgroundColor: primaryColor,
               shape:

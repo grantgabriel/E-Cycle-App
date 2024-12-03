@@ -21,7 +21,7 @@ class _NavbarState extends State<Navbar> {
     _pages = [
       const Home(),
       const Explore(),
-      Scan(),
+      const Scan(),
       const Home(),
       const ProfilePage(),
     ];

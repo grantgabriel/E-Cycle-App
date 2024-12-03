@@ -28,7 +28,7 @@ class _TransactionHistoryState extends State<TransactionHistory> {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 5, top: 70, bottom: 16),
+            padding: const EdgeInsets.only(left: 5, top: 30, bottom: 16),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
