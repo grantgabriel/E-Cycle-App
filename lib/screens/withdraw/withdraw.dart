@@ -1,5 +1,7 @@
 import 'package:e_cycle/screens/withdraw/tabs/e_voucher.dart';
 import 'package:e_cycle/screens/withdraw/tabs/withdraw_money.dart';
+import 'package:e_cycle/screens/widgets/new_header.dart';
+import 'package:e_cycle/screens/widgets/toggle_tabs.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/app_styles.dart';
@@ -26,29 +28,9 @@ class _WithdrawPageState extends State<WithdrawPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: primaryColor,
+      appBar: NewHeader(title: "E-Point"),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.only(left: 5, top: 30, bottom: 16),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                IconButton(
-                  onPressed: () => Navigator.pop(context),
-                  icon: const Icon(Icons.arrow_back_ios_new),
-                  color: Colors.white,
-                ),
-                Expanded(
-                    child: Text(
-                  "E-Point",
-                  textAlign: TextAlign.center,
-                  style:
-                      AppStyles.headerPageStyle.copyWith(color: Colors.white),
-                )),
-                const SizedBox(width: 50)
-              ],
-            ),
-          ),
           Expanded(
             child: Container(
               padding: const EdgeInsets.only(
@@ -83,4 +65,4 @@ class _WithdrawPageState extends State<WithdrawPage> {
       ),
     );
   }
-} 
+}

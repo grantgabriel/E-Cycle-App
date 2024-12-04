@@ -1,3 +1,5 @@
+import 'package:e_cycle/models/withdraw_items.dart';
+import 'package:e_cycle/screens/withdraw/widgets/withdraw_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:e_cycle/screens/withdraw/tabs/withdraw_detail_page.dart';
 
@@ -6,156 +8,125 @@ class WithdrawMoneyTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return Container(
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5.0),
-            child: Text(
+          Container(
+            width: 193,
+            child: const Text(
               'Tukar point-mu menjadi saldo untukmu',
-              textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
-            ),
-          ),
-          SizedBox(height: 16.0),
-          // Kategori Tukar ke E-wallet
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 5.0),
-            child: Text(
-              'Tukar ke E-wallet',
               style: TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold,
+                  fontWeight: FontWeight.w400,
+                  fontSize: 14,
+                  fontFamily: 'Poppins',
                   color: Colors.black),
+              textAlign: TextAlign.center,
             ),
           ),
-          SizedBox(height: 16.0),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+          const SizedBox(
+            height: 24,
+          ),
+          const Divider(
+            color: Colors.grey,
+            thickness: 1,
+          ),
+          const SizedBox(
+            height: 14,
+          ),
+          const Text(
+            'Tukar ke E-wallet',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              fontFamily: 'Poppins',
+            ),
+          ),
+          const SizedBox(
+            height: 24,
+          ),
+          // E-Wallet Icons
+          const Row(
+            // mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              _buildEwalletItem(context, label: 'Dana', icon: Icons.wallet),
-              _buildEwalletItem(context,
-                  label: 'Gopay', icon: Icons.account_balance_wallet),
-              _buildEwalletItem(context,
-                  label: 'OVO', icon: Icons.mobile_friendly),
+              WithdrawIcon(
+                  image: 'assets/images/withdraw_dana.png', title: 'Dana'),
+              SizedBox(
+                width: 32,
+              ),
+              WithdrawIcon(
+                  image: 'assets/images/withdraw_gopay.png', title: 'Gopay'),
+              SizedBox(
+                width: 32,
+              ),
+              WithdrawIcon(
+                  image: 'assets/images/withdraw_ovo.png', title: 'OVO'),
             ],
           ),
-          SizedBox(height: 16.0),
-          Padding(
-              padding: const EdgeInsets.all(5.0),
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      _buildBankItem(
-                        context,
-                        icon: Icons.account_balance,
-                        label: 'BNI',
-                      ),
-                      SizedBox(width: 16.0),
-                      _buildBankItem(
-                        context,
-                        icon: Icons.account_balance_wallet,
-                        label: 'Mandiri',
-                      ),
-                      SizedBox(width: 16.0),
-                      _buildBankItem(
-                        context,
-                        icon: Icons.account_balance,
-                        label: 'BRI',
-                      ),
-                      SizedBox(width: 16.0),
-                      _buildBankItem(
-                        context,
-                        icon: Icons.account_balance,
-                        label: 'BTN',
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 16.0),
-                  Row(
-                    children: [
-                      _buildBankItem(
-                        context,
-                        icon: Icons.account_balance,
-                        label: 'BSI',
-                      ),
-                      SizedBox(width: 16.0),
-                      _buildBankItem(
-                        context,
-                        icon: Icons.account_balance,
-                        label: 'BCA',
-                      ),
-                      SizedBox(width: 16.0),
-                      _buildBankItem(
-                        context,
-                        icon: Icons.account_balance,
-                        label: 'SeaBank',
-                      ),
-                      SizedBox(width: 16.0),
-                      _buildBankItem(
-                        context,
-                        icon: Icons.more_horiz,
-                        label: 'Lainnya',
-                      ),
-                    ],
-                  )
-                ],
-              ))
-        ],
-      ),
-    );
-  }
-
-  Widget _buildEwalletItem(BuildContext context,
-      {required String label, required IconData icon}) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => WithdrawDetailPage()),
-        );
-      },
-      child: Column(
-        mainAxisSize: MainAxisSize.min, // Membatasi tinggi agar sesuai konten
-        children: [
-          CircleAvatar(
-            radius: 30,
-            backgroundColor: Colors.grey[200],
-            child: Icon(icon, size: 28, color: Colors.blue),
+          const SizedBox(
+            height: 24,
           ),
-          SizedBox(height: 8),
-          Text(
-            label,
-            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
-            textAlign: TextAlign.center,
+          const Divider(
+            color: Colors.grey,
+            thickness: 1,
           ),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildBankItem(BuildContext context,
-      {required IconData icon, required String label}) {
-    return GestureDetector(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => WithdrawDetailPage()),
-        );
-      },
-      child: Column(
-        children: [
-          CircleAvatar(
-            radius: 30,
-            backgroundColor: Colors.grey[200],
-            child: Icon(icon, size: 28, color: Colors.blue),
+          const Text(
+            'Tukar ke Bank',
+            style: TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+              fontFamily: 'Poppins',
+            ),
           ),
-          SizedBox(height: 8),
-          Text(
-            label,
-            style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500),
-            textAlign: TextAlign.center,
+          const SizedBox(
+            height: 24,
+          ),
+          Container(
+            width: 243,
+            decoration: BoxDecoration(
+              color: Colors.white, // Warna background TextField
+              borderRadius: BorderRadius.circular(15), // Radius untuk TextField
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.1), // Warna shadow
+                  spreadRadius: 1, // Seberapa jauh shadow menyebar
+                  blurRadius: 6, // Seberapa kabur shadow
+                  offset: Offset(0, 2), // Posisi shadow
+                ),
+              ],
+            ),
+            child: const TextField(
+              textAlignVertical: TextAlignVertical.center,
+              decoration: InputDecoration(
+                  hintText: 'Cari bank tujuan',
+                  hintStyle: TextStyle(
+                    fontWeight: FontWeight.w300,
+                    fontFamily: 'Poppins',
+                    fontSize: 14,
+                  ), // Hint text di dalam TextField
+                  suffixIcon:
+                      Icon(Icons.search), // Ikon pencarian di dalam TextField
+                  border: InputBorder.none, // Tidak ada border pada TextField
+                  contentPadding:
+                      EdgeInsets.symmetric(horizontal: 15, vertical: 0)),
+            ),
+          ),
+          const SizedBox(
+            height: 24,
+          ),
+          // Bank Icons
+          GridView.count(
+            padding: EdgeInsets.zero,
+            shrinkWrap: true, // Aktifkan ini
+            physics: const NeverScrollableScrollPhysics(),
+            crossAxisSpacing: 4,
+            mainAxisSpacing: 4,
+            crossAxisCount: 4,
+            children: List.generate(withdrawItems.length, (index) {
+              return WithdrawIcon(
+                  title: withdrawItems[index]['title']!,
+                  image: withdrawItems[index]['image']!);
+            }),
           ),
         ],
       ),
