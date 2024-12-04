@@ -5,6 +5,7 @@ import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:e_cycle/constants/colors.dart';
 import 'package:e_cycle/screens/home.dart';
 import 'transactionHistory/transaction_history.dart';
+import 'task/task.dart';
 
 class Navbar extends StatefulWidget {
   @override
@@ -22,7 +23,7 @@ class _NavbarState extends State<Navbar> {
       const Home(),
       const TransactionHistory(),
       const Scan(),
-      const Home(),
+      const ETaskPage(),
       const ProfilePage(),
     ];
   }
