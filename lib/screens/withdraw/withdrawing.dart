@@ -80,7 +80,7 @@ class Withdrawing extends StatelessWidget {
                         ],
                       ),
                       SizedBox(
-                        height: 362,
+                        height: 262,
                       ),
                       ElevatedButton(
                         onPressed: () => showDialog<String>(
