@@ -27,10 +27,7 @@ class MyApp extends StatelessWidget {
         // fontFamily: 'Poppins',
         useMaterial3: true,
       ),
-      routes: {
-        "/": (context) => const Home(),
-        "/withdraw": (context) => const WithdrawPage(),
-      },
+      home: const Splash(),
     );
   }
 }
