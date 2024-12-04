@@ -28,7 +28,8 @@ class Withdrawing extends StatelessWidget {
               children: [
                 const SizedBox(height: 45),
                 Center(
-                  child: Column(
+                  child: Flex(
+                    direction: Axis.vertical,
                     children: [
                       Text(
                         'Tukar Ke ${withdrawDestination?.toUpperCase() ?? ''}',
@@ -80,7 +81,7 @@ class Withdrawing extends StatelessWidget {
                         ],
                       ),
                       SizedBox(
-                        height: 262,
+                        height: 128,
                       ),
                       ElevatedButton(
                         onPressed: () => showDialog<String>(
