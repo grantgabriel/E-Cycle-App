@@ -32,8 +32,9 @@ class TransactionTile extends StatelessWidget {
                         ),
                         // const SizedBox(width: 50,),
                         Text(
-                          "${transactionData["pointChange"]} GreenPoint",
-                          style: AppStyles.descriptionStyle,
+                          "+${transactionData["pointChange"]} E-Point",
+                          style: AppStyles.descriptionStyle
+                              .copyWith(fontStyle: FontStyle.italic),
                         )
                       ],
                     ),
@@ -43,11 +44,13 @@ class TransactionTile extends StatelessWidget {
                       children: [
                         Text(
                           transactionData["transactionType"],
-                          style: AppStyles.descriptionStyle.copyWith(color: Colors.grey),
+                          style: AppStyles.descriptionStyle
+                              .copyWith(color: Colors.grey),
                         ),
                         Text(
                           transactionData["transactionTime"],
-                          style: AppStyles.descriptionStyle.copyWith(color: Colors.grey),
+                          style: AppStyles.descriptionStyle
+                              .copyWith(color: Colors.grey),
                         )
                       ],
                     )

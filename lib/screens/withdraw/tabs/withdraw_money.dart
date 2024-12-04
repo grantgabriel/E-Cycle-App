@@ -1,6 +1,7 @@
 import 'package:e_cycle/models/withdraw_items.dart';
 import 'package:e_cycle/screens/withdraw/widgets/withdraw_icon.dart';
 import 'package:flutter/material.dart';
+import 'package:e_cycle/screens/withdraw/tabs/withdraw_detail_page.dart';
 
 class WithdrawMoneyTab extends StatelessWidget {
   const WithdrawMoneyTab({super.key});

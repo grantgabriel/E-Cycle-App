@@ -1,10 +1,10 @@
-import 'package:e_cycle/screens/explore.dart';
 import 'package:e_cycle/screens/scan/scan.dart';
 import 'package:e_cycle/screens/profile/profile.dart';
 import 'package:flutter/material.dart';
 import 'package:persistent_bottom_nav_bar/persistent_bottom_nav_bar.dart';
 import 'package:e_cycle/constants/colors.dart';
 import 'package:e_cycle/screens/home.dart';
+import 'transactionHistory/transaction_history.dart';
 
 class Navbar extends StatefulWidget {
   @override
@@ -20,8 +20,8 @@ class _NavbarState extends State<Navbar> {
     super.initState();
     _pages = [
       const Home(),
-      const Explore(),
-      Scan(),
+      const TransactionHistory(),
+      const Scan(),
       const Home(),
       const ProfilePage(),
     ];
@@ -51,8 +51,8 @@ class _NavbarState extends State<Navbar> {
         inactiveColorPrimary: Colors.grey,
       ),
       PersistentBottomNavBarItem(
-        icon: const Icon(Icons.explore_rounded, size: 32),
-        title: "Jelajahi",
+        icon: const Icon(Icons.history, size: 32),
+        title: "Histori",
         activeColorPrimary: primaryColor,
         inactiveColorPrimary: Colors.grey,
       ),
@@ -67,7 +67,7 @@ class _NavbarState extends State<Navbar> {
         inactiveColorPrimary: Colors.grey,
       ),
       PersistentBottomNavBarItem(
-        icon: const Icon(Icons.task, size: 32),
+        icon: const Icon(Icons.document_scanner_outlined, size: 32),
         title: "Tugas",
         activeColorPrimary: primaryColor,
         inactiveColorPrimary: Colors.grey,

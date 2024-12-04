@@ -11,12 +11,10 @@ class CommunityPage extends StatelessWidget {
         backgroundColor: const Color.fromRGBO(0, 148, 33, 1),
         centerTitle: true,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white),
-          onPressed: () {
-            // Aksi kembali
-          },
+          icon: const Icon(Icons.arrow_back_ios_new, color: Colors.white),
+          onPressed: () => Navigator.pop(context),
         ),
-        title: Text(
+        title: const Text(
           "E-Waste Community",
           style: TextStyle(
             color: Colors.white,
@@ -26,14 +24,14 @@ class CommunityPage extends StatelessWidget {
         ),
       ),
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
         ),
         child: Column(
           children: [
-            SizedBox(height: 16),
-            Row(
+            const SizedBox(height: 16),
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 CommunityTabButton(
@@ -53,11 +51,11 @@ class CommunityPage extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 16),
+            const SizedBox(height: 16),
             Expanded(
               child: ListView(
-                padding: EdgeInsets.all(16),
-                children: [
+                padding: const EdgeInsets.all(16),
+                children: const [
                   CommunityTile(
                     imagePath: 'assets/images/zeroe.png',
                     title: 'Zero E-Waste Community',
@@ -119,6 +117,7 @@ class CommunityTabButton extends StatelessWidget {
   final bool selected;
 
   const CommunityTabButton({
+    super.key,
     required this.title,
     required this.icon,
     required this.selected,
@@ -132,11 +131,11 @@ class CommunityTabButton extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
         border: Border.all(color: Colors.green),
       ),
-      padding: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
       child: Column(
         children: [
           Icon(icon, color: selected ? Colors.white : Colors.green),
-          SizedBox(height: 4),
+          const SizedBox(height: 4),
           Text(
             title,
             style: TextStyle(
@@ -158,6 +157,7 @@ class CommunityTile extends StatelessWidget {
   final int messageCount;
 
   const CommunityTile({
+    super.key,
     required this.imagePath,
     required this.title,
     required this.description,
@@ -168,8 +168,8 @@ class CommunityTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(bottom: 12),
-      padding: EdgeInsets.all(12),
+      margin: const EdgeInsets.only(bottom: 12),
+      padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         color: Colors.green.shade50,
         borderRadius: BorderRadius.circular(10),
@@ -181,16 +181,16 @@ class CommunityTile extends StatelessWidget {
             radius: 24,
             backgroundImage: AssetImage(imagePath),
           ),
-          SizedBox(width: 12),
+          const SizedBox(width: 12),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   title,
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
                 ),
-                SizedBox(height: 4),
+                const SizedBox(height: 4),
                 Text(
                   description,
                   style: TextStyle(fontSize: 12, color: Colors.grey[700]),
@@ -201,14 +201,14 @@ class CommunityTile extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Text(date, style: TextStyle(fontSize: 12, color: Colors.grey)),
-              SizedBox(height: 8),
+              Text(date, style: const TextStyle(fontSize: 12, color: Colors.grey)),
+              const SizedBox(height: 8),
               CircleAvatar(
                 radius: 12,
                 backgroundColor: Colors.green,
                 child: Text(
                   '$messageCount',
-                  style: TextStyle(color: Colors.white, fontSize: 12),
+                  style: const TextStyle(color: Colors.white, fontSize: 12),
                 ),
               ),
             ],

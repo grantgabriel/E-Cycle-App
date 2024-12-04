@@ -2,8 +2,9 @@ import 'package:e_cycle/constants/app_styles.dart';
 import 'package:e_cycle/constants/colors.dart';
 import 'package:e_cycle/screens/transactionHistory/tabs/completed_transaction.dart';
 import 'package:e_cycle/screens/transactionHistory/tabs/ongoing_transaction.dart';
-import 'package:e_cycle/widgets/toggle_tabs.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/toggle_tabs.dart';
 
 class TransactionHistory extends StatefulWidget {
   const TransactionHistory({super.key});
@@ -28,20 +29,20 @@ class _TransactionHistoryState extends State<TransactionHistory> {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.only(left: 5, top: 70, bottom: 16),
+            padding: const EdgeInsets.only(left: 5, top: 30, bottom: 16),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 IconButton(
-                  onPressed: () {},
-                  icon: const Icon(Icons.arrow_back_ios_new),
-                  color: Colors.white
-                ),
+                    onPressed: () {},
+                    icon: const Icon(Icons.arrow_back_ios_new),
+                    color: Colors.white),
                 Expanded(
                   child: Text(
-                    "History Transaksi",
+                    "Histori Transaksi",
                     textAlign: TextAlign.center,
-                    style: AppStyles.headerPageStyle.copyWith(color: Colors.white),
+                    style:
+                        AppStyles.headerPageStyle.copyWith(color: Colors.white),
                   ),
                 ),
                 const SizedBox(width: 48)
@@ -49,37 +50,34 @@ class _TransactionHistoryState extends State<TransactionHistory> {
             ),
           ),
           Expanded(
-            child: Container(
-              padding: const EdgeInsets.only(left: 30, right: 30, bottom: 30, top: 20),
-              decoration: const BoxDecoration(
+              child: Container(
+            padding:
+                const EdgeInsets.only(left: 30, right: 30, bottom: 30, top: 20),
+            decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(30),
-                  topRight: Radius.circular(30)
-                )
-              ),
-              child: SingleChildScrollView(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ToggleTabs(
-                      tab1: "Sedang Berlangsung",
-                      tab2: "Selesai",
+                    topLeft: Radius.circular(30),
+                    topRight: Radius.circular(30))),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  ToggleTabs(
+                      tab1: "On Going",
+                      tab2: "Completed",
                       selectedTab: _selectedIndex,
-                      onTabTapped: _onTabTapped
-                    ),
-                    const SizedBox(height: 24),
-                    AnimatedSwitcher(
-                      duration: const Duration(milliseconds: 300),
-                      child: _selectedIndex == 0
-                          ? const OngoingTransactionTab()
-                          : const CompletedTransactionTab(),
-                    )
-                  ],
-                ),
+                      onTabTapped: _onTabTapped),
+                  const SizedBox(height: 24),
+                  AnimatedSwitcher(
+                    duration: const Duration(milliseconds: 300),
+                    child: _selectedIndex == 0
+                        ? const OngoingTransactionTab()
+                        : const CompletedTransactionTab(),
+                  )
+                ],
               ),
-            )
-          )
+            ),
+          ))
         ],
       ),
     );

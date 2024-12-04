@@ -1,11 +1,12 @@
 import 'package:e_cycle/screens/withdraw/tabs/e_voucher.dart';
 import 'package:e_cycle/screens/withdraw/tabs/withdraw_money.dart';
-import 'package:e_cycle/widgets/new_header.dart';
-import 'package:e_cycle/widgets/toggle_tabs.dart';
+import 'package:e_cycle/screens/widgets/new_header.dart';
+import 'package:e_cycle/screens/widgets/toggle_tabs.dart';
 import 'package:flutter/material.dart';
 
 import '../../constants/app_styles.dart';
 import '../../constants/colors.dart';
+import '../widgets/toggle_tabs.dart';
 
 class WithdrawPage extends StatefulWidget {
   const WithdrawPage({super.key});

@@ -1,5 +1,5 @@
 import 'package:e_cycle/constants/colors.dart';
-import 'package:e_cycle/widgets/new_header.dart';
+import 'package:e_cycle/screens/widgets/new_header.dart';
 import 'package:flutter/material.dart';
 
 class HistoriTransaksi extends StatelessWidget {
