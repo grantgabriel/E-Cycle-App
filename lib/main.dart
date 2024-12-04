@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       routes: {
-        "/": (context) => const WithdrawPage(),
+        "/": (context) => const Home(),
         "/withdraw": (context) => const WithdrawPage(),
       },
     );

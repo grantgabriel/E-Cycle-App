@@ -176,11 +176,13 @@ class BerhasilDialog extends StatelessWidget {
             SizedBox(
               height: 10,
             ),
-            Text('Berhasil!',
-                style: AppStyles.descriptionStyle.copyWith(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w500,
-                )),
+            Text(
+              'Berhasil!',
+              style: AppStyles.descriptionStyle.copyWith(
+                fontSize: 24,
+                fontWeight: FontWeight.w500,
+              ),
+            ),
           ],
         ),
       ),
